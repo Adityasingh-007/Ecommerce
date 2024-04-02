@@ -1,0 +1,82 @@
+<% layout('./layouts/boilerplate') %>
+<%- include('../partials/navbar') %>
+
+
+<div class="row">
+
+    <div class="col-6 mx-auto">
+<form action="/products" method="post" class="needs-validation" novalidate> 
+
+    <!-- submit on starting page where all the products are showing -->
+    <!-- nonvalidate to remove the existence of required keyword,giving class="needs-validation" because below script needs this class -->
+    <div class="mb-3">
+        <label for="naam">Name:</label>
+        <input type="text" class="form-control" name="name" placeholder="name of the product" required>
+        <!-- in input entries of name="" shoul be equal to schema -->
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+        <div class="invalid-feedback">
+            Please enter the name field.
+        </div>
+        <!--  -->
+    </div>
+
+    <div class="mb-3">
+        <label for="img">Image:</label>
+        <input type="text" class="form-control" name="img" placeholder="source of Image" required>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+        <div class="invalid-feedback">
+            Please enter the image field.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="paisa">Price:</label>
+        <input type="text" class="form-control" name="price" placeholder="paise likho" required>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+        <div class="invalid-feedback">
+            Please enter the price field.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="naam">Desc:</label>
+        <textarea name="desc" id="desc" cols="30" rows="5" placeholder="Description of product" required></textarea>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+        <div class="invalid-feedback">
+            Please enter the description field.
+        </div>
+    </div>
+    <button class="btn btn-sm btn-success">Add Product</button>
+    <!-- btn-sm for small button and btn-success for green -->
+</form>
+
+</div>
+</div>
+
+<script>
+    // iife  (immediately invoked functional expression)
+    (() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()   // this function is invoked by here
+</script>

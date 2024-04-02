@@ -1,0 +1,76 @@
+<% layout('./layouts/boilerplate') %>
+
+    <div class="row">
+
+        <div class="col-md-6 mx-auto">
+            <%- include('../partials/flash') %>
+                <h1 class="display-6">Sign up</h1>
+                <form action="/register" method="POST">
+                    <div class="mb-3">
+
+                        <label class="form-label" for="username">Username:</label>
+                        <input class="form-control" type="text" name="username" id="username"
+                            placeholder="enter username">
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label" for="email">email:</label>
+                        <input class="form-control" type="email" name="email" id="email" placeholder="enter mail">
+                    </div>
+
+
+                    <div class="mb-3">
+                        <p>want to register as ?</p>
+                        <div class="mx-2">
+                            <label class="form-label" for="Buyer">Buyer:</label>
+                            <input class="form-check-input" type="radio" name="role" value="Buyer" id="Buyer">
+                        </div>
+
+                        <div class="mx-2">
+                            <label class="form-label" for="Seller">Seller:</label>
+                            <input class="form-check-input" type="radio" name="role" value="Seller" id="Seller">
+                            <!-- this role will contains value seller -->
+                        </div>
+
+                        <!-- _id: ObjectId('65a39a13c48e68cac08af384'),
+                        email: 'adityasinghbtp123@gmail.com',
+                        role: 'on',
+                        username: 'Aditya',
+                        salt: '715079ad9f4637ed6f450d4695b3b1c4b71df3b033ee5bae4885853d6ac3cd42',
+                        hash: 'f50585b1ab2808466431f98afedba3b6f0635f2131ec366d7e44b219459bfc2c8abfb9beef9e63e2a390c3861b6c1d92cdf3763f6637a89184274ee82acd96ac803f79556569fae4afde464332bbab671e32ec119bb4983a138d5a94e90db90a6054ee0b02f262e78a7be3c7b5c710b2874a7375ef8efd72f2cea8fa65ccd77a3324c26b7e8fe00995ebaa74c8221496edc4ef2599ed56a327a0b387417420f28e013b5cd62aea22f448416981b362dd95f580787018f05f1e869c74a6d9cdc4b37d00a4f1c233c2881af2e0d19a37c9384e977fcf8b9859eada9ffc48dd95518e7db3eef27fd8c32a23c1e717fb13d9b49670315ba9f11f8aee74e2359c1ca1f53f0cfb195f60a41e4a7de2a5f1075a56945d269c51925cd7493e50bcb5c05420e7b158348ed3a2b17d94d7c3a2d2ac29b312605957d0125f613f7f7a9434d3f0d5d4c0fa621cf60d9b31ceff52071548ce82a4a6b9840f1ca04bd250fa43cda3522cce6ad26c9f135da8d5b1526337dac3c11b9ef6c061c46b5f49f2041d665949cf42b2cdb7461187ce25d792963389a59ef53e3605a4d91e8cdfbab9b49b8fdad1cecf77604c3eb45688778b5f0fdbb718c368faac9e6cfae5a6a82c3c8ec99fba29b8d6eff75693614710e106e17f86a327e3b2baa6173a735a2fe70509109c40cca9b0e4efe9b7979a90657f06bad137f77c160709adeb6b7f306c95a7',
+                        __v: 0
+                      }
+                    ] -->
+
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label" for="password">password:</label>
+                        <input class="form-control" type="password" name="password" id="password"
+                            placeholder="enter password">
+
+                    </div>
+
+
+                    <button type="submit" class="btn btn-sm btn-success">Sign Up</button>
+                    <p class="fw-light mt-2">Already have an account,<a href="/login">Login</a></p>
+                </form>
+
+        </div>
+    </div>
+
+
+    <!-- 1.value,name,id
+
+Value = The value attribute specifies the value of an element.
+
+Name = name is only to post form data. The name definies what the name of the attribute will be as soon as the form is submitted. 
+So if you want to read this attribute later you will find it under the "name" in the POST or GET Request. Whereas the id is used to adress a field or element in javascript or css. -->
+
+
+<!-- 2.Notice that each input field must have a name attribute to be submitted.
+
+If the name attribute is omitted, the value of the input field will not be sent at all. -->
